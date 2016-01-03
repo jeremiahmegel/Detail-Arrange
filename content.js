@@ -1,5 +1,5 @@
 /*
-	Copyright Jeremiah Megel 2014
+	Copyright Jeremiah Megel 2014, 2016
 	
 	This file is part of Detail-Arrange for Google Contacts™.
 	
