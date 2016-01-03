@@ -1,0 +1,1 @@
+The icon for Detail-Arrange for Google Contacts™ is taken from [http://www.iconarchive.com/show/blogger-icons-by-rafiqul-hassan/Arrow-Updown-icon.html].

@@ -1,0 +1,78 @@
+@charset "UTF-8";
+
+/*
+	Copyright Jeremiah Megel 2014
+	
+	This file is part of Detail-Arrange for Google Contacts™.
+	
+	Detail-Arrange for Google Contacts™ is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+	
+	Detail-Arrange for Google Contacts™ is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+	
+	You should have received a copy of the GNU General Public License
+	along with Detail-Arrange for Google Contacts™. If not, see <http://www.gnu.org/licenses/>.
+*/
+
+/*
+	Thanks to David Walsh for the DOM node insertion-detection hack!
+	http://davidwalsh.name/detect-node-insertion
+	
+	BEGIN David Walsh hack.
+*/
+
+@keyframes nodeInserted {  
+	from {
+		opacity: 0.99;
+	}
+	to {
+		opacity: 1;
+	}  
+}
+
+@-webkit-keyframes nodeInserted {  
+	from {
+		opacity: 0.99;
+	}
+	to {
+		opacity: 1;
+	}  
+}
+
+div>span>span>input[type=text]:not([readonly]):not([autocomplete=off]), div>span>span>textarea:not([readonly]):not([autocomplete=off]) {
+	animation-duration: 0.001s;
+	animation-name: nodeInserted;
+	-webkit-animation-duration: 0.001s;
+	-webkit-animation-name: nodeInserted;
+}
+
+/*
+	END David Walsh hack.
+*/
+
+.moveArrowContainer {
+	position: relative;
+}
+
+.moveArrow {
+	cursor: pointer;
+	position: absolute;
+	top: 0;
+}
+
+.moveUpArrow {
+	left: -20px;
+}
+
+.moveDownArrow {
+	left: -10px;
+}
+
+div:first-child>div>.moveArrowContainer>.moveUpArrow, div:nth-last-child(-n+2)>div>.moveArrowContainer>.moveDownArrow {
+	display: none;
+}

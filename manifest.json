@@ -1,0 +1,28 @@
+{
+	"name": "Detail-Arrange for Google Contacts™",
+	"version": "1.0.2",
+	"description": "Lets you rearrange contact details in Google Contacts™.",
+	"author": "Jeremiah Megel",
+	"minimum_chrome_version": "5",
+	"content_scripts": [
+		{
+			"matches": [
+				"*://*.mail.google.com/*",
+				"*://*.contacts.google.com/*",
+				"*://*.google.com/contacts/*"
+			],
+			"js": [
+				"content.js"
+			],
+			"css": [
+				"content.css"
+			]
+		}
+	],
+	"icons": {
+		"16": "images/16.png",
+		"48": "images/48.png",
+		"128": "images/128.png"
+	},
+	"manifest_version": 2
+}
