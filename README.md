@@ -4,7 +4,7 @@ Google Contacts™ does not natively let you rearrange phone numbers, email addr
 
 The icon for Detail-Arrange for Google Contacts™ is taken from [http://www.iconarchive.com/show/blogger-icons-by-rafiqul-hassan/Arrow-Updown-icon.html].
 
-Help me out! Buy me a cup of coffee: http://jeremiahm.com/paypal
+Help me out! Buy me a cup of coffee: https://jeremiahm.com/paypal
 
 ------
 
