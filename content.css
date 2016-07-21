@@ -26,25 +26,27 @@
 	BEGIN David Walsh hack.
 */
 
-@keyframes nodeInserted {  
+@keyframes nodeInserted {
 	from {
 		opacity: 0.99;
 	}
 	to {
 		opacity: 1;
-	}  
+	}
 }
 
-@-webkit-keyframes nodeInserted {  
+@-webkit-keyframes nodeInserted {
 	from {
 		opacity: 0.99;
 	}
 	to {
 		opacity: 1;
-	}  
+	}
 }
 
-div>span>span>input[type=text]:not([readonly]):not([autocomplete=off]), div>span>span>textarea:not([readonly]):not([autocomplete=off]) {
+div[role=dialog] input[type=text][autocomplete=off], /* New */
+div>span>span>input[type=text]:not([readonly]):not([autocomplete=off]), /* Old */
+div>span>span>textarea:not([readonly]):not([autocomplete=off]) {
 	animation-duration: 0.001s;
 	animation-name: nodeInserted;
 	-webkit-animation-duration: 0.001s;
@@ -59,10 +61,21 @@ div>span>span>input[type=text]:not([readonly]):not([autocomplete=off]), div>span
 	position: relative;
 }
 
+div[role=dialog] .moveArrowContainer {
+	display: inline-block;
+	vertical-align: text-top;
+	width: 0;
+}
+
 .moveArrow {
+	color: initial;
 	cursor: pointer;
 	position: absolute;
 	top: 0;
+}
+
+.moveArrow:hover {
+	text-decoration: none;
 }
 
 .moveUpArrow {
@@ -73,6 +86,11 @@ div>span>span>input[type=text]:not([readonly]):not([autocomplete=off]), div>span
 	left: -10px;
 }
 
-div:first-child>div>.moveArrowContainer>.moveUpArrow, div:nth-last-child(-n+2)>div>.moveArrowContainer>.moveDownArrow {
+div[role=dialog] div:first-child>div>span>.moveArrowContainer>.moveUpArrow, /* New */
+div[role=dialog] div:nth-last-child(-n+2)>div>span>.moveArrowContainer>.moveDownArrow,
+div[role=dialog] div:nth-last-child(-n+1)>div>span>.moveArrowContainer,
+div:first-child>div>.moveArrowContainer>.moveUpArrow, /* Old */
+div:nth-last-child(-n+2)>div>.moveArrowContainer>.moveDownArrow {
 	display: none;
 }
+
